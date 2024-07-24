@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+
+.sidebar {
+  position: sticky;
+  height: 300px;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

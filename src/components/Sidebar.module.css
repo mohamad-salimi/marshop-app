@@ -1,0 +1,30 @@
+.sidebar {
+  height: fit-content;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #37beb0;
+  border-radius: 20px;
+}
+
+.sidebar div {
+  display: flex;
+  align-items: center;
+  color: #0c6170;
+  font-weight: 500;
+}
+
+.sidebar li {
+  list-style-type: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  color: #0c6170;
+}
+
+.selected {
+  background-color: #a4e5e0;
+  color: #0c6170;
+  border-radius: 10px;
+}
