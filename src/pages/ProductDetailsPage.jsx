@@ -1,14 +1,26 @@
 import { Link, useParams } from "react-router-dom";
-import { useProductsDetails } from "../context/ProductContext";
 import Loader from "../components/Loader";
 import { SiOpenproject } from "react-icons/si";
 import { IoPricetag } from "react-icons/io5";
 import { FaArrowLeft } from "react-icons/fa";
 import styles from "./ProductDetailsPage.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchProducts } from "../features/product/productSlice";
 
 function ProductDetailsPage() {
+  const dispatch = useDispatch();
   const { id } = useParams();
-  const productDetails = useProductsDetails(+id);
+  const productDetails = useSelector((state) =>
+    state.product.products?.find((i) => i.id === +id)
+  );
+
+  useEffect(() => {
+    if (!productDetails) {
+      dispatch(fetchProducts());
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
